@@ -20,6 +20,10 @@ app.use("/api/leaderboard", require("./routes/leaderboard"));
 // Server start
 const PORT = process.env.PORT || 5000;
 
+const mlRoutes = require("./routes/ml");
+app.use("/api/ml", mlRoutes);
+
+
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
